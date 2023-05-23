@@ -1,0 +1,156 @@
+
+body{
+    display: flex;
+    overflow: hidden;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    font-family: "Poppins", sans-serif;
+}
+
+/*
+------------------------------------------------------------------------------------
+                                    Form styling
+------------------------------------------------------------------------------------
+*/
+
+.wrapper{
+    width: 450px;
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 0 0 128px 0 rgba(0,0,0, 0.1), 0 32px 64px -48px rgba(0,0,0,0.5);
+}
+
+.brand-frame{
+    text-align: center;
+}
+.brand-frame .brand{
+    font-weight: bold;
+    color: #3291e6;
+}
+
+.form{
+    padding: 25px 30px;
+}
+
+.form header{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.form form{
+    margin: 20px 0;
+}
+
+.form form .error-txt{
+    color: #ff0000;
+    background-color: #f8d7da;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+    display: none; 
+}
+
+.form form .name-details{
+    display: flex;
+}
+
+form .name-details .field:first-child{
+    margin-right: 10px;
+}
+form .name-details .field:last-child{
+    margin-left: 10px;
+}
+
+.form form .field{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form form .field label{
+    margin-bottom: 2px;
+}
+
+.form form .input input{
+    outline: none;
+}
+.form form .input input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.form form .image input{
+    font-size: 17px;
+    overflow-y: hidden;
+}
+.form form .image .camcra-icon-frame{
+    background-color: #f7f7f7c5;
+    box-shadow: 2px 8px 16px -6px rgba(0, 0, 0, 0.685);
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 5px;
+    width: fit-content;
+}
+.form form .image .fa-camera{
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+.form form .image .fa-camera:hover{
+    color: #1977cc;
+}
+.form form .image .custom-txt{
+    font-size: 13px;
+}
+
+.form form .btn input{
+    margin-top: 13px;
+    height: 45px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    background-color: #1977cc;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form form .field .eye{
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    color: #ccc;
+    top: 52%;
+    transform: translateY(-50);
+    cursor: pointer;
+}
+
+.form form .field i.active::before{
+    color: #3291e6;
+    content: "\f070";
+}
+
+.form .link{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 17px;
+}
+.form .link a{
+    color: #3291e6;
+    text-decoration: none;
+    font-weight: bold;
+}
+.form .link a:hover{
+    text-decoration: underline;
+}
