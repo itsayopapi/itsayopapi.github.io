@@ -19,7 +19,7 @@ class User(Base_model, Base):
         conditions: choices of conditions for the users
     """
     __tablename__ = 'users'
-    email = Column(String(128), nullable=False)
+    email = Column(String(128), nullable=False, unique=True)
     password = Column(String(128), nullable=False)
     first_name = Column(String(128), nullable=False)
     last_name = Column(String(128), nullable=False)
