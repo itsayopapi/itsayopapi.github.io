@@ -1,3 +1,3 @@
 # KamvaMindPal
 
-Very own mental health care app
+Very own mental health care app.
