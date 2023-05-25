@@ -2,13 +2,13 @@
 """
 This is a Strategy class and it inherits from Base_model.
 """
-from models.base_model import Base_model, Base
+from models.base_model import BaseModel, Base
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String, ForeignKey
 
 
-class SpotifyContent(Base_model, Base):
+class SpotifyContent(BaseModel, Base):
     """
     Spotify Content class
     Attributes:
@@ -20,4 +20,4 @@ class SpotifyContent(Base_model, Base):
     __tablename__ = 'spotitifyContent'
     content_title = Column(String(60), nullable=False)
     podcast_id = Column(String(60), nullable=False)
-    strategy_id = Column(String(60), ForeignKey('strategies.id'))
+    strategies = relationship("Strategies", backref="spotitifyContent")

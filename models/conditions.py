@@ -2,13 +2,14 @@
 """
 This is a conditions class and it inherits from Base_model.
 """
-from models.base_model import Base_model, Base
+import models
+from models.base_model import BaseModel, Base
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String, ForeignKey
 
 
-class Conditions(Base_model, Base):
+class Conditions(BaseModel, Base):
     """
     This class for conditions
     Attributes:
@@ -17,7 +18,6 @@ class Conditions(Base_model, Base):
     user_id : user_id
     """
     __tablename__ = "conditions"
-    condition_name = Column(String(1024), nullable=False)
-    strategy_choice = relationship(
-        'strategies', backref='conditions', nullable=False)
-    user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
+    condition_name = Column(String(128), nullable=False)
+    strategy_id = Column(String(60), ForeignKey('strategies.id'))
+    users = relationship("User", backref="conditions")

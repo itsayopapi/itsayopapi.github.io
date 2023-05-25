@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ """
+import models
 from os import getenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
@@ -66,11 +67,12 @@ def close(self):
     self.__session.remove()
 
 
-def get(self):
+def get(self, cls, id):
     """"""
-    pass
-
-
+    if cls not in classes.values():
+        return None
+    
+    
 def count(self):
-    """"""
+    """ """
     pass
