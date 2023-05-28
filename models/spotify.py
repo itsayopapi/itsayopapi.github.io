@@ -3,9 +3,9 @@
 This is a Strategy class and it inherits from Base_model.
 """
 from flask import Flask
-import models
 from base_model import BaseModel
 from flask_sqlalchemy import SQLAlchemy
+from KamvaMindPal.app import app
 from app import app
 from datetime import datetime
 
