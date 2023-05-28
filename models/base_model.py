@@ -1,23 +1,25 @@
 #!/usr/bin/python3
 """This is a Base Model for MindPal MVP"""
-from sqlalchemy.ext.declarative import declarative_base
-import models
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from app import app
 from datetime import datetime
-from sqlalchemy import Column, String, DateTime
-
-Base = declarative_base()
 
 
-class BaseModel:
+db = SQLAlchemy(app)
+
+
+class BaseModel(db.models):
     """
     This is the models defines
     common attributes for all models
     """
 
 
-id = Column(String(60), unique=True, nullable=True, primary_key=True)
-created_on = Column(DateTime, nullable=True, default=(datetime.utcnow()))
-updated_on = Column(DateTime, nullable=False, default=(datetime.utcnow()))
+id = db.Column(db.Interger, unique=True, nullable=False, primary_key=True)
+created_on = db.Column(db.DateTime, nullable=True, default=(datetime.utcnow()))
+updated_on = db.Column(db.DateTime, nullable=False,
+                       default=(datetime.utcnow()))
 
 
 def __str__(self):
@@ -39,10 +41,10 @@ def save(self):
     Method that updates the date_updated attribute with the current date.
     """
     self.date_created = datetime.utcnow()
-    models.storage.new(self)
-    models.storage.save()
+    db.models.storage.new(self)
+    db.models.storage.save()
 
 
 def delete(self):
     """ This Method will delete data from the database"""
-    models.storage.delete(self)
+    db.models.storage.delete(self)

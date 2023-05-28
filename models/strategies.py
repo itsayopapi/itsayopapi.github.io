@@ -2,14 +2,17 @@
 """
 This is a Strategy class and it inherits from Base_model.
 """
-from models.base_model import BaseModel, Base
-from models import youtube, spotify
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy import Column, String, ForeignKey, Text, Integer
+from flask import Flask
+import models
+from base_model import BaseModel
+from flask_sqlalchemy import SQLAlchemy
+from app import app
+from datetime import datetime
+
+db = SQLAlchemy(app)
 
 
-class Strategies(BaseModel, Base):
+class Strategies(BaseModel):
     """
     This is a Strategy class
     Attributes:
@@ -19,8 +22,8 @@ class Strategies(BaseModel, Base):
         spotify_id : The id of the spotify content
     """
     __tablename__ = 'strategies'
-    strategy_name = Column(String(255), nullable=False)
-    strategy_text = Column(Text, nullable=False)
-    conditions = relationship("Conditions", backref="strategies")
-    youtube_id = Column(String(60), ForeignKey("youtube.id"))
-    spotify_id = Column(String(60), ForeignKey("spotify.id"))
+    strategy_name = db.Column(db.String(255), nullable=False)
+    strategy_text = db.Column(db.Text, nullable=False)
+    conditions = db.relationship("Conditions", backref="strategies")
+    youtube_id = db.Column(db.String(60), db.ForeignKey("youtube.id"))
+    spotify_id = db.Column(db.String(60), db.ForeignKey("spotify.id"))

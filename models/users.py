@@ -2,14 +2,17 @@
 """
 This is a user class and it inherits from Base_model.
 """
+from flask import Flask
 import models
-from models.base_model import BaseModel, Base
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy import Column, String, ForeignKey
+from base_model import BaseModel
+from flask_sqlalchemy import SQLAlchemy
+from app import app
+from datetime import datetime
+
+db = SQLAlchemy(app)
 
 
-class User(BaseModel, Base):
+class User(BaseModel):
     """
     This is the user Class
     Attributes
@@ -21,11 +24,11 @@ class User(BaseModel, Base):
     """
     if models.storate_c == 'db':
         __tablename__ = 'users'
-        email = Column(String(128), nullable=False, unique=True)
-        password = Column(String(128), nullable=False)
-        first_name = Column(String(128), nullable=False)
-        last_name = Column(String(128), nullable=False)
-        conditions_id = Column(String(60), ForeignKey(
+        email = db.Column(db.String(128), nullable=False, unique=True)
+        password = db.Column(db.String(128), nullable=False)
+        first_name = db.Column(db.String(128), nullable=False)
+        last_name = db.Column(db.String(128), nullable=False)
+        conditions_id = db.Column(db.String(60), db.ForeignKey(
             'conditions.id'), nullable=False)
 
     else:

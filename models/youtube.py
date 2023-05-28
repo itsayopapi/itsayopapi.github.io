@@ -2,13 +2,16 @@
 """
 This is a Youtube class and it inherits from Base_model.
 """
-from models.base_model import BaseModel, Base
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy import Column, String, ForeignKey, Integer
+from flask import Flask
+from base_model import BaseModel
+from flask_sqlalchemy import SQLAlchemy
+from app import app
+from datetime import datetime
+
+db = SQLAlchemy(app)
 
 
-class YoutubeContent(BaseModel, Base):
+class YoutubeContent(BaseModel):
     """
     The youtube content class
     Atribute
@@ -16,6 +19,6 @@ class YoutubeContent(BaseModel, Base):
     strategy = the strategy to use this content for.
     """
     __tablename__ = 'youtubeContent'
-    content_title = Column(String(60), nullable=False)
-    video_url = Column(String(60), nullable=False)
-    strategies = relationship("Strategies", backref="youtubeContent")
+    content_title = db.Column(db.String(60), nullable=False)
+    video_url = db.Column(db.String(60), nullable=False)
+    strategies = db.relationship("Strategies", backref="youtubeContent")

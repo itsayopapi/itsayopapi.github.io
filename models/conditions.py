@@ -2,14 +2,17 @@
 """
 This is a conditions class and it inherits from Base_model.
 """
+from flask import Flask
 import models
-from models.base_model import BaseModel, Base
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy import Column, String, ForeignKey
+from base_model import BaseModel
+from flask_sqlalchemy import SQLAlchemy
+from app import app
+from datetime import datetime
+
+db = SQLAlchemy(app)
 
 
-class Conditions(BaseModel, Base):
+class Conditions(BaseModel):
     """
     This class for conditions
     Attributes:
@@ -18,6 +21,6 @@ class Conditions(BaseModel, Base):
     user_id : user_id
     """
     __tablename__ = "conditions"
-    condition_name = Column(String(128), nullable=False)
-    strategy_id = Column(String(60), ForeignKey('strategies.id'))
-    users = relationship("User", backref="conditions")
+    condition_name = db.Column(db.String(128), nullable=False)
+    strategy_id = db.Column(db.String(60), db.ForeignKey('strategies.id'))
+    users = db.relationship("User", backref="conditions")
