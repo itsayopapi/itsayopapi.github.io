@@ -5,10 +5,9 @@ This is a Youtube class and it inherits from Base_model.
 from flask import Flask
 from base_model import BaseModel
 from flask_sqlalchemy import SQLAlchemy
-from KamvaMindPal.app import app
 from datetime import datetime
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 
 class YoutubeContent(BaseModel):

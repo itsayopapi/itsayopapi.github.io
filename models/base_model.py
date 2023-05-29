@@ -2,24 +2,23 @@
 """This is a Base Model for MindPal MVP"""
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from KamvaMindPal.app import app
 from datetime import datetime
 
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 
-class BaseModel(db.models):
+class BaseModel(db.Model):
     """
     This is the models defines
     common attributes for all models
     """
-
-
-id = db.Column(db.Interger, unique=True, nullable=False, primary_key=True)
-created_on = db.Column(db.DateTime, nullable=True, default=(datetime.utcnow()))
-updated_on = db.Column(db.DateTime, nullable=False,
-                       default=(datetime.utcnow()))
+    __tablename__ = 'base_model'
+    id = db.Column(db.Integer, primary_key=True)
+    created_on = db.Column(db.DateTime, nullable=True,
+                           default=(datetime.utcnow()))
+    updated_on = db.Column(db.DateTime, nullable=False,
+                           default=(datetime.utcnow()))
 
 
 def __str__(self):

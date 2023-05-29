@@ -2,14 +2,12 @@
 """
 This is a user class and it inherits from Base_model.
 """
-import models
 from flask import Flask
 from base_model import BaseModel
 from flask_sqlalchemy import SQLAlchemy
-from KamvaMindPal.app import app
 from datetime import datetime
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 
 class User(BaseModel):
@@ -22,17 +20,11 @@ class User(BaseModel):
         last_name: user last name
         conditions: choices of conditions for the users
     """
-    if models.storate_c == 'db':
-        __tablename__ = 'users'
-        email = db.Column(db.String(128), nullable=False, unique=True)
-        password = db.Column(db.String(128), nullable=False)
-        first_name = db.Column(db.String(128), nullable=False)
-        last_name = db.Column(db.String(128), nullable=False)
-        conditions_id = db.Column(db.String(60), db.ForeignKey(
-            'conditions.id'), nullable=False)
 
-    else:
-        first_name = ""
-        last_name = ""
-        password = ""
-        email = ""
+    __tablename__ = 'users'
+    email = db.Column(db.String(128), nullable=False, unique=True)
+    password = db.Column(db.String(128), nullable=False)
+    first_name = db.Column(db.String(128), nullable=False)
+    last_name = db.Column(db.String(128), nullable=False)
+    conditions_id = db.Column(db.String(60), db.ForeignKey(
+        'conditions.id'), nullable=False)
