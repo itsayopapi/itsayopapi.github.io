@@ -28,8 +28,23 @@ section {
   padding: 20px;
 }
 
-footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
 }
