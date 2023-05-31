@@ -1,50 +1,80 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset default browser styles */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 header {
-  background-color: #f1f1f1;
-  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.title-text {
+  text-align: center;
 }
 
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-  display: inline;
+  margin-right: 20px;
 }
 
 nav ul li a {
-  padding: 10px;
+  color: #fff;
   text-decoration: none;
 }
 
+main {
+  padding: 20px 0;
+}
+
 section {
-  padding: 20px;
+  margin-bottom: 30px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-}
-
-label {
+section h2 {
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  padding: 5px;
-  margin-bottom: 10px;
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
 }
 
-button {
-  padding: 10px 20px;
+/* Media queries for responsive design */
+@media (max-width: 600px) {
+  nav ul li {
+    margin-right: 10px;
+  }
+
+  main {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  section h2 {
+    font-size: 20px;
+  }
 }
