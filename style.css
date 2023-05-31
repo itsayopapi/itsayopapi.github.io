@@ -64,7 +64,7 @@ a {
 }
 
 body .main {
-  background-image: url(https://raw.githubusercontent.com/itsayopapi/itsayopapi.github.io/main/Logo/Copy%20of%20Kamva%20MindPal.png);
+  background-image: url(../Logo/Copy of Kamva MindPal.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
