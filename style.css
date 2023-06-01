@@ -64,7 +64,7 @@ a {
 }
 
 body .main {
-  background: url(./Logo/Kamva MindPal.png);
+  background: url(../Logo/Kamva MindPal.png);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
