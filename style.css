@@ -1,0 +1,230 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+nav .logo {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    font-size: 18px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+/* First Page Section */
+.first-page {
+    background-color: #333;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.first-page .intro {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Recent Projects Section */
+.recent-cont {
+    text-align: center;
+}
+
+.myrecentworks {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.dash {
+    width: 100px;
+    margin: 0 auto;
+}
+
+/* My Projects Section */
+.my-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.card a {
+    text-decoration: none;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card a:hover {
+    background-color: #444;
+}
+
+/* About Section */
+.about {
+    background-color: #f1f1f1;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.about .about-me {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about .about-info {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.about-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.about-wrapper {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+}
+
+.about-head {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.works-details {
+    list-style-type: none;
+    padding: 0;
+}
+
+.works-details li {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.footer-content {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-email p {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.footer-email p::before {
+    content: "\f0e0";
+    font-family: FontAwesome;
+    margin-right: 10px;
+}
+
+.footer-media-link {
+    margin-top: 20px;
+}
+
+.footer-media-link ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.footer-media-link ul li {
+    font-size: 24px;
+}
+
+.footer-media-link ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-media-link ul li a:hover {
+    color: #f1f1f1;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    nav .menu {
+        display: block;
+    }
+
+    nav .menu img {
+        width: 30px;
+        height: 30px;
+    }
+
+    nav .menu.active ~ .detail-nav ul {
+        display: block;
+    }
+}
